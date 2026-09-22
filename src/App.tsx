@@ -14,6 +14,8 @@ import { useState, type ReactNode } from 'react';
 import './App.css';
 
 const WHATSAPP = '5511959873606';
+const BOOKSY =
+  'https://booksy.com/pt-br/133912_barbearia-dfael_barbearias_971198_poa';
 
 type TServico = {
   nome: string;
@@ -207,10 +209,13 @@ export default function App() {
     setMenuAberto(false);
   };
 
-  const abrirWhatsApp = (servico?: string) => {
-    const mensagem = servico
-      ? `Olá! Vim pelo site da Barbearia D'Fael e gostaria de reservar o serviço: ${servico}.`
-      : `Olá! Vim pelo site da Barbearia D'Fael e gostaria de agendar um horário.`;
+  const abrirBooksy = () => {
+    window.open(BOOKSY, '_blank', 'noopener,noreferrer');
+  };
+
+  const abrirWhatsApp = () => {
+    const mensagem =
+      `Olá! Vim pelo site da Barbearia D'Fael e gostaria de tirar uma dúvida.`;
 
     window.open(
       `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(mensagem)}`,
@@ -288,10 +293,10 @@ export default function App() {
           <button
             type="button"
             className="cta"
-            onClick={() => abrirWhatsApp()}
+            onClick={abrirBooksy}
           >
-            <MessageCircle />
-            AGENDE SEU HORÁRIO
+            <Clock3 />
+            AGENDAR PELO BOOKSY
           </button>
         </div>
       </section>
@@ -307,7 +312,7 @@ export default function App() {
             <CardServico
               key={servico.nome}
               servico={servico}
-              onReservar={abrirWhatsApp}
+              onReservar={abrirBooksy}
             />
           ))}
         </div>
@@ -348,7 +353,7 @@ export default function App() {
                 <CardCatalogo
                   key={servico.nome}
                   servico={servico}
-                  onReservar={abrirWhatsApp}
+                  onReservar={abrirBooksy}
                 />
               ))}
             </div>
@@ -387,10 +392,10 @@ export default function App() {
           <button
             type="button"
             className="cta"
-            onClick={() => abrirWhatsApp()}
+            onClick={abrirBooksy}
           >
-            <MessageCircle />
-            AGENDAR HORÁRIO
+            <Clock3 />
+            AGENDAR PELO BOOKSY
           </button>
         </div>
       </section>
@@ -453,70 +458,78 @@ export default function App() {
         </div>
       </section>
 
- <section
-  className="contato section"
-  id="contato"
->
-  <Titulo>VENHA NOS VISITAR</Titulo>
+      <section
+        className="contato section"
+        id="contato"
+      >
+        <Titulo>VENHA NOS VISITAR</Titulo>
 
-  <div className="contato-grid">
-    <div>
-      <a
-  className="contato-localizacao"
-  href="https://www.google.com/maps/search/?api=1&query=R.+Maria+do+Rosário,+76,+Jardim+Ivonete,+Poá+-+SP,+08553-120"
-  target="_blank"
-  rel="noopener noreferrer"
-  aria-label="Abrir endereço da Barbearia D'Fael no Google Maps"
->
-  <MapPin />
+        <div className="contato-grid">
+          <a
+            className="contato-localizacao"
+            href="https://www.google.com/maps/search/?api=1&query=R.+Maria+do+Rosário,+76,+Jardim+Ivonete,+Poá+-+SP,+08553-120"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Abrir endereço da Barbearia D'Fael no Google Maps"
+          >
+            <MapPin />
 
-  <p>
-    Rua Maria do Rosário, 76
-    <br />
-    <span>
-      Jardim Ivonete, Poá - SP
-      <br />
-      CEP 08553-120
-    </span>
-  </p>
-</a>
-    </div>
+            <p>
+              Rua Maria do Rosário, 76
+              <br />
+              <span>
+                Jardim Ivonete, Poá - SP
+                <br />
+                CEP 08553-120
+              </span>
+            </p>
+          </a>
 
-    <div>
-      <Clock3 />
+          <div>
+            <Clock3 />
 
-      <p>
-        Barbearia D'Fael
-        <br />
-        <span>Consulte a disponibilidade</span>
-      </p>
-    </div>
+            <p>
+              Barbearia D'Fael
+              <br />
+              <span>Consulte a disponibilidade no Booksy</span>
+            </p>
+          </div>
 
-    <a
-      className="contato-instagram"
-      href="https://www.instagram.com/barbearia_dfael/"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      <Instagram />
+          <a
+            className="contato-instagram"
+            href="https://www.instagram.com/barbearia_dfael/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Instagram />
 
-      <p>
-        Instagram
-        <br />
-        <span>@barbearia_dfael</span>
-      </p>
-    </a>
-  </div>
+            <p>
+              Instagram
+              <br />
+              <span>@barbearia_dfael</span>
+            </p>
+          </a>
+        </div>
 
-  <button
-    type="button"
-    className="cta"
-    onClick={() => abrirWhatsApp()}
-  >
-    <MessageCircle />
-    AGENDE SEU HORÁRIO
-  </button>
-</section>
+        <button
+          type="button"
+          className="cta"
+          onClick={abrirBooksy}
+        >
+          <Clock3 />
+          AGENDAR PELO BOOKSY
+        </button>
+      </section>
+
+      <button
+        type="button"
+        className="whatsapp-flutuante"
+        onClick={abrirWhatsApp}
+        aria-label="Falar com a Barbearia D'Fael pelo WhatsApp"
+        title="Fale conosco pelo WhatsApp"
+      >
+        <MessageCircle />
+      </button>
 
       <footer>
         <img
@@ -538,7 +551,7 @@ function CardServico({
   onReservar,
 }: {
   servico: TServico;
-  onReservar: (servico: string) => void;
+  onReservar: () => void;
 }) {
   return (
     <article className="servico">
@@ -558,9 +571,9 @@ function CardServico({
       <button
         type="button"
         className="reservar-btn"
-        onClick={() => onReservar(servico.nome)}
+        onClick={onReservar}
       >
-        RESERVAR
+        AGENDAR
       </button>
     </article>
   );
@@ -571,7 +584,7 @@ function CardCatalogo({
   onReservar,
 }: {
   servico: TServico;
-  onReservar: (servico: string) => void;
+  onReservar: () => void;
 }) {
   return (
     <article className="catalogo-card">
@@ -595,9 +608,9 @@ function CardCatalogo({
 
         <button
           type="button"
-          onClick={() => onReservar(servico.nome)}
+          onClick={onReservar}
         >
-          Reservar
+          Agendar
         </button>
       </div>
     </article>
