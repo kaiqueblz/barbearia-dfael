@@ -10,6 +10,7 @@ import {
   Wifi,
   X,
 } from 'lucide-react';
+import { FaWhatsapp } from 'react-icons/fa';
 import { useState, type ReactNode } from 'react';
 import './App.css';
 
@@ -521,15 +522,15 @@ export default function App() {
         </button>
       </section>
 
-      <button
-        type="button"
-        className="whatsapp-flutuante"
-        onClick={abrirWhatsApp}
-        aria-label="Falar com a Barbearia D'Fael pelo WhatsApp"
-        title="Fale conosco pelo WhatsApp"
-      >
-        <MessageCircle />
-      </button>
+<button
+  type="button"
+  className="whatsapp-flutuante"
+  onClick={abrirWhatsApp}
+  aria-label="Falar com a Barbearia D'Fael pelo WhatsApp"
+  title="Fale conosco pelo WhatsApp"
+>
+  <FaWhatsapp />
+</button>
 
       <footer>
         <img
