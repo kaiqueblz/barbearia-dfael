@@ -461,17 +461,25 @@ export default function App() {
 
   <div className="contato-grid">
     <div>
-      <MapPin />
+      <a
+  className="contato-localizacao"
+  href="https://www.google.com/maps/search/?api=1&query=R.+Maria+do+Rosário,+76,+Jardim+Ivonete,+Poá+-+SP,+08553-120"
+  target="_blank"
+  rel="noopener noreferrer"
+  aria-label="Abrir endereço da Barbearia D'Fael no Google Maps"
+>
+  <MapPin />
 
-      <p>
-        Rua Maria do Rosário, 76
-        <br />
-        <span>
-          Jardim Ivonete, Poá - SP
-          <br />
-          CEP 08553-120
-        </span>
-      </p>
+  <p>
+    Rua Maria do Rosário, 76
+    <br />
+    <span>
+      Jardim Ivonete, Poá - SP
+      <br />
+      CEP 08553-120
+    </span>
+  </p>
+</a>
     </div>
 
     <div>
