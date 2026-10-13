@@ -10,7 +10,6 @@ import {
   Wifi,
   X,
 } from 'lucide-react';
-import { FaWhatsapp } from 'react-icons/fa';
 import { useState, type ReactNode } from 'react';
 import './App.css';
 
@@ -365,8 +364,8 @@ export default function App() {
       <section className="sobre" id="sobre">
         <div className="sobre-imagem">
           <img
-            src="/images/ambiente-01.jpeg"
-            alt="Ambiente da Barbearia D'Fael"
+            src="/images/sobre-maquinas.jpeg"
+            alt="Máquinas de corte profissionais da Barbearia D'Fael"
           />
         </div>
 
@@ -414,22 +413,37 @@ export default function App() {
         <div className="galeria">
           <div className="galeria-principal">
             <img
-              src="/images/fachada.jpeg"
-              alt="Fachada da Barbearia D'Fael"
+              src="/images/galeria-letreiro.jpeg"
+              alt="Letreiro da Barbearia D'Fael"
+              loading="lazy"
             />
           </div>
 
           <div className="galeria-secundaria">
             <img
-              src="/images/ambiente-01.jpeg"
-              alt="Cadeiras da Barbearia D'Fael"
+              src="/images/galeria-produtos.jpeg"
+              alt="Produtos profissionais da Barbearia D'Fael"
+              loading="lazy"
             />
-
             <img
-              src="/images/ambiente-02.jpeg"
-              alt="Produtos da Barbearia D'Fael"
+              src="/images/galeria-logo-parede.jpeg"
+              alt="Logotipo D'Fael na parede da barbearia"
+              loading="lazy"
             />
           </div>
+        </div>
+
+        <div className="galeria-extras">
+          <img
+            src="/images/hero-fachada.jpeg"
+            alt="Fachada e entrada da Barbearia D'Fael"
+            loading="lazy"
+          />
+          <img
+            src="/images/sobre-maquinas.jpeg"
+            alt="Equipamentos de corte da Barbearia D'Fael"
+            loading="lazy"
+          />
         </div>
       </section>
 
@@ -522,15 +536,15 @@ export default function App() {
         </button>
       </section>
 
-<button
-  type="button"
-  className="whatsapp-flutuante"
-  onClick={abrirWhatsApp}
-  aria-label="Falar com a Barbearia D'Fael pelo WhatsApp"
-  title="Fale conosco pelo WhatsApp"
->
-  <FaWhatsapp />
-</button>
+      <button
+        type="button"
+        className="whatsapp-flutuante"
+        onClick={abrirWhatsApp}
+        aria-label="Falar com a Barbearia D'Fael pelo WhatsApp"
+        title="Fale conosco pelo WhatsApp"
+      >
+        <MessageCircle />
+      </button>
 
       <footer>
         <img
