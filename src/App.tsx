@@ -5,12 +5,12 @@ import {
   CreditCard,
   MapPin,
   Menu,
-  MessageCircle,
   Scissors,
   Wifi,
   X,
 } from 'lucide-react';
 import { useState, type ReactNode } from 'react';
+import { FaWhatsapp } from 'react-icons/fa';
 import './App.css';
 
 const WHATSAPP = '5511959873606';
@@ -439,11 +439,6 @@ export default function App() {
             alt="Fachada e entrada da Barbearia D'Fael"
             loading="lazy"
           />
-          <img
-            src="/images/sobre-maquinas.jpeg"
-            alt="Equipamentos de corte da Barbearia D'Fael"
-            loading="lazy"
-          />
         </div>
       </section>
 
@@ -543,7 +538,7 @@ export default function App() {
         aria-label="Falar com a Barbearia D'Fael pelo WhatsApp"
         title="Fale conosco pelo WhatsApp"
       >
-        <MessageCircle />
+        <FaWhatsapp />
       </button>
 
       <footer>

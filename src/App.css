@@ -1486,57 +1486,46 @@ footer p {
     object-position: center 62%;
   }
 }
-/* Refinamento da seção Sobre Nós */
 
-.sobre {
-  min-height: 420px;
-  grid-template-columns: 45% 55%;
-}
-
-.sobre-imagem {
-  min-height: 420px;
-  height: 420px;
-}
-
-.sobre-imagem img {
-  width: 100%;
-  height: 100%;
-  min-height: 0;
-  object-fit: cover;
-  object-position: center 58%;
-}
-
-.sobre-content {
-  padding: 45px 65px;
-}
-
-@media (max-width: 800px) {
-  .sobre {
-    grid-template-columns: 1fr;
-  }
-
-  .sobre-imagem {
-    height: 300px;
-    min-height: 0;
-  }
-
-  .sobre-imagem img {
-    height: 100%;
-    min-height: 0;
-    object-position: center 55%;
-  }
-
-  .sobre-content {
-    padding: 40px 25px;
-  }
-}
-
+/* Ajustes finais mobile — outubro/2026 */
 @media (max-width: 520px) {
-  .sobre-imagem {
-    height: 240px;
+  /* Cards mais compactos, preservando preço e ação */
+  .servicos-grid { gap: 12px; }
+  .servico {
+    min-height: 0;
+    padding: 20px 16px 22px;
   }
+  .service-icon {
+    height: 42px;
+    margin-bottom: 2px;
+  }
+  .service-icon svg { width: 35px; height: 35px; }
+  .servico h3 { margin: 5px 0 6px; line-height: 1.3; }
+  .servico > strong { margin-bottom: 5px; font-size: 26px; }
+  .servico > p { margin-bottom: 12px; }
+  .reservar-btn { margin-top: 0; }
 
-  .sobre-content {
-    padding: 35px 20px;
+  /* Contato flutuante menor e acima da barra do navegador */
+  .whatsapp-flutuante {
+    width: 46px;
+    height: 46px;
+    right: 14px;
+    bottom: calc(88px + env(safe-area-inset-bottom, 0px));
+    z-index: 1000;
   }
+  .whatsapp-flutuante svg { width: 25px; height: 25px; }
+
+  /* Última imagem: fachada, sem repetir a foto das máquinas */
+  .galeria-extras {
+    grid-template-columns: 1fr;
+    margin-top: 12px;
+  }
+  .galeria-extras img {
+    height: 235px;
+    object-position: center 52%;
+  }
+}
+@media (min-width: 521px) {
+  .galeria-extras { grid-template-columns: 1fr; }
+  .galeria-extras img { height: 320px; object-position: center 52%; }
 }
